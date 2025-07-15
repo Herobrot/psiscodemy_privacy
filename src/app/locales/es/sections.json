@@ -1,0 +1,24 @@
+{
+    "whoWeAre": {
+        "title": "¿Quiénes somos?",
+        "description": "HomeDevs Software Solutions, mejor conocido como HomeDevs, es el responsable del uso y protección de sus datos personales."
+    },
+    "purposes": {
+        "title": "¿Para qué fines utilizaremos sus datos personales?",
+        "description": "Los datos personales que recabamos de usted, los utilizaremos para las siguientes finalidades que son necesarias para el servicio que solicita:",
+        "items": [
+            "Identificación del estudiante con matrícula para autenticación segura",
+            "Recepción de reportes o solicitudes de ayuda anónimas o identificadas",
+            "Evaluación de alertas de riesgo académico o emocional (triaje)",
+            "Comunicación con el tutor, orientador o responsable en caso de alerta"
+        ]
+    },
+    "whereToConsult": {
+        "title": "¿Dónde puedo consultar el aviso de privacidad integral?",
+        "description": "Para conocer mayor información sobre los términos y condiciones en que serán tratados sus datos personales, como los terceros con quienes compartimos su información personal y la forma en que podrá ejercer sus derechos ARCO, puede consultar el aviso de privacidad integral.",
+        "highlight": {
+            "title": "Ubicación del aviso integral:",
+            "description": "El aviso de privacidad integral estará disponible para su consulta dentro de la aplicación móvil, en el apartado de Configuración > Privacidad."
+        }
+    }
+} 

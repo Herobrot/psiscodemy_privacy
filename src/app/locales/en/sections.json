@@ -1,0 +1,24 @@
+{
+    "whoWeAre": {
+        "title": "Who are we?",
+        "description": "HomeDevs Software Solutions, also known as HomeDevs, is responsible for the use and protection of your personal data."
+    },
+    "purposes": {
+        "title": "What purposes will we use your personal data for?",
+        "description": "The personal data we collect from you will be used for the following purposes that are necessary for the service you request:",
+        "items": [
+            "Student identification with enrollment for secure authentication",
+            "Reception of anonymous or identified help reports or requests",
+            "Evaluation of academic or emotional risk alerts (triage)",
+            "Communication with the tutor, counselor or responsible person in case of alert"
+        ]
+    },
+    "whereToConsult": {
+        "title": "Where can I consult the comprehensive privacy notice?",
+        "description": "To learn more about the terms and conditions under which your personal data will be processed, such as the third parties with whom we share your personal information and how you can exercise your ARCO rights, you can consult the comprehensive privacy notice.",
+        "highlight": {
+            "title": "Location of the comprehensive notice:",
+            "description": "The comprehensive privacy notice will be available for consultation within the mobile application, in the Settings > Privacy section."
+        }
+    }
+} 
