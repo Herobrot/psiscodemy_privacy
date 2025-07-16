@@ -26,7 +26,7 @@ const Purposes: React.FC = () => {
       <ul className="list-none pl-0 space-y-2">
         {purposes.map((purpose, idx) => (
           <motion.li 
-            key={idx} 
+            key={`purpose-${purpose.substring(0, 20)}`}
             initial={{ opacity: 0, x: -20 }}
             animate={hasAnimated ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
             transition={{ duration: 0.4, delay: idx * 0.1 }}
