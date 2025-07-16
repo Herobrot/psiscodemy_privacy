@@ -4,7 +4,6 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-// Importar archivos de traducción usando los índices
 import * as es from './locales/es';
 import * as en from './locales/en';
 
@@ -25,7 +24,6 @@ const resources = {
   },
 };
 
-// Inicializar i18n solo una vez
 if (!i18n.isInitialized) {
   i18n
     .use(LanguageDetector)

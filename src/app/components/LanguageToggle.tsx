@@ -18,7 +18,6 @@ const LanguageToggle: React.FC = () => {
     i18n.changeLanguage(newLang);
     setCurrentLang(newLang);
     
-    // Reset del estado de pulsación después de la animación
     setTimeout(() => setIsPressed(false), 200);
   };
 
