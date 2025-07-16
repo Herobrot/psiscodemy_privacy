@@ -37,7 +37,7 @@ function HomeContent() {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "luga.soci@gmail.com",
+      "email": "homedevs.solutions@gmail.com",
       "contactType": "customer service"
     },
     "sameAs": [
