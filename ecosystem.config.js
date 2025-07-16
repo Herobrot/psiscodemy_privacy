@@ -1,6 +1,6 @@
 module.exports = {
   apps: [{
-    name: 'psiscodemy-privacy',
+    name: 'auth-service',
     script: 'npm',
     args: 'start',
     cwd: process.cwd(),

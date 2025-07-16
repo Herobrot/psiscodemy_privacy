@@ -2,22 +2,58 @@ name: Deploy to EC2
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Deploy to EC2
-      uses: appleboy/ssh-action@v1.0.0
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USER }}
-        key: ${{ secrets.EC2_SSH_KEY }}
-        script: |
-          cd auth-service
-          git pull origin main
-          npm i 
-          npm run build
-          pm2 restart 0 
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ec2-98-85-162-101.compute-1.amazonaws.com
+          username: ubuntu
+          key: |
+            -----BEGIN RSA PRIVATE KEY-----
+            MIIEowIBAAKCAQEA2H5re8rKceTJN8aYxjVobcWLBonGC5GJmFYNB6bCtbJfTRYu
+            17VbN5n9AgWF5TsGCW4IrT5VyAYaRQY2d4udMDHmob4owpkCpCGiezniWQTMrl59
+            u+6NOu3SUUTeeK0BHfzyABfLoTPLeu3w1+Ewaxypl3HJXWCLwar/ES5o3JBz3Ybm
+            j6VD3TJZPlYBjhmN9B6IId2D6mWscse+f54B31BUY9QHpseHDjBN1QCWbWzUmfS+
+            QtRwSZJHRPt229pksW5kN2w9iQdNDYCOzxZ+P8X6zPHi9AtFOcigOpG7sKG/vEE/
+            pTU+8g7WiuBnY9bs+/Py/ojYvLdw0bbCTSCwNwIDAQABAoIBAFvz9jsyOyJ9BmpG
+            VAV8EcruKMqyIggv3L1zbz1cuz7pcEkRrvu37/KB2VDOf7yJgVrn/Y939n9q+CVx
+            KhlEl5Ms3sS8PBvLWa/VCWpFf7pHq5g0UjtMa3goIziZg9TFxr+x/CfF85uYoEiq
+            X62R3DrihbXpgpnCtBmiQ4xMpgVoHSqmCmTpyKdbXkCWgfvR0bnsDUOsgAJ2uNdU
+            izRcPeQyZ2+8bhRREYp6l3S+egH4W7b//iEkz1XvYPpB/+DxJpp3+P4jy0ip5pU2
+            kWZaeLYuGk1QlEWFw0TyXqXV4EMBJCtEjMkQ3K3EQUR/HmeoNAcxbPbaGkn0KrAx
+            1FuxGSECgYEA+tyvgBPhMM43R50Oyzbhy2/q7Q2khFchxGVCd939RYB7DWDzGmVJ
+            IkHIJ+xYVWgBdUMutFyfhVILsJHaE5S0zrpCdlpxrGcgNJdFk571GfJizJsV0m/s
+            1MJ7+y/4e0pvqmR4nUvE14ExiuwsgPKAIoDNbfYaykrVkX47zztphV0CgYEA3O2J
+            G7SQMMWXNuVA3HxWbQarGNsc+Do3QhaYH9AYRcP1I2HA1Pg42XQwzYQZ05zi1zu8
+            57a5fk9ZDnZ6beHc75T2tBad2dGyRsjhRU4c6ZNBsy9LejjoZF//iwf7YTR7z9lE
+            WReAdsHADwZmxKWW1v6AyxKXd81P2/mkVGSxfqMCgYEA9H8WRZwahLjXw+JdQs5Q
+            rzh7HWOIjrtlW8bdS3p+mLiqNdXh2j4RU2QNsmt1hHgDw8ggwwTrLMNURVlB1IfA
+            2SNMF5H67G7uQpOU6lWoyQsmJAia8ijICG0s7RpJ8dAQmV+m9pecV/XA1YdtsJep
+            LveeQKf2YGcjU9RWcpmTNLkCgYBme6XLfVIZ3b7Mj0IsRV1OC/bYe+QPXen+NT7y
+            GvT3f/Q6KoFqCY9NiDGPVEUqva8YirSRhFi9uA8mv10BlfGIDcD3PzqQLU8WuN6O
+            6LJOw6mJdln742QiE8oV82jv6Ym5nB6xeU51SGFQVvbbJ7k2GC8khIZQ46O09jP9
+            lgwkIwKBgDJt076LhNZbeM7ARVLmwh0lmbKxNm7cvbO6j/8ra6NctGBOxfnKUCRJ
+            f07402qRI4yjVKezWd1PjKNlJiThbX8SiEYB9xcENQd+NZVBcXELbdbm56ZRhu+k
+            +LtZVueZp+VcyHfTNufOtw74SBAi2AP9RdQFKKWTyOYORGEvE+N1
+            -----END RSA PRIVATE KEY-----
+          script: |
+            # Navegar al directorio del proyecto
+            cd auth-service
+            
+            # Actualizar código desde el repositorio
+            git pull origin main
+            
+            # Instalar dependencias
+            npm install
+            
+            # Construir la aplicación
+            npm run build
+            
+            # Reiniciar la aplicación con PM2
+            pm2 restart 0 
