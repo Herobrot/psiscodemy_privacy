@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# deployment
+logs/
+*.tar.gz
+deploy.sh
+app.tar.gz
+
+# PM2
+.pm2/
